@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(../imgs/sky.jpeg);
+  background-size: cover;
+  animation: colorChange 2s linear infinite;
+}
+section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../imgs/rain.png");
+  animation: rain 0.2s linear infinite;
+}
+
+@keyframes colorChange {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+@keyframes rain {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20% 100%;
+  }
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  width: auto;
+  font-family: fantasy;
+}
+
+.wrapper span {
+  display: block;
+  /* text-transform: uppercase; */
+}
+.text1 {
+  font-size: 3.8rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: green;
+  position: relative;
+  /*animation: text 5s linear infinite;*/
+}
+.wrapper button{
+  padding: 10px 8px;
+  width: 130px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background: linear-gradient(-90deg,red,green);
+}
+
+/*@keyframes text {
+  0% {
+    color: orange;
+    margin-bottom: -40px;
+  }
+  30% {
+    margin-bottom: -40px;
+    letter-spacing: 25px;
+  }
+  85% {
+    margin-bottom: -40px;
+    letter-spacing: 8px;
+  }
+}
+*/
